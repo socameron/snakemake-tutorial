@@ -1,0 +1,49 @@
+# As an example, we can use the config.yaml file to store wildcard names and access them here! 
+# This way, the 'Snakefile' isn't over-run with initial set-ups
+batches:
+  batch_1:
+  - HPW-10_2-2695941_S13
+  - HPW-12_2-2698037_S146
+  - HPW-15_2-2698019_S128
+  - HPW-16_2-2698004_S113
+  batch_2:
+  - HPW-10_2-2695941_S13
+  - HPW-12_2-2698037_S144
+  - HPW-15_2-2698019_S126
+  - HPW-16_2-2698004_S111
+  - HPW-17_2-2698024_S131
+cluster-generic-cancel-cmd: scancel
+cluster-generic-cancel-nargs: 4000
+cluster-generic-status-cmd: status-sacct-robust.sh
+cluster-generic-submit-cmd: mkdir -p results/slurm_logs/{rule} && sbatch --cpus-per-task={threads}
+  --mem={resources.mem_mb} --time={resources.time} --job-name=smk-{rule}-{wildcards}
+  --output=results/slurm_logs/{rule}/{rule}-{wildcards}-%j.out --error=results/slurm_logs/{rule}/{rule}-{wildcards}-%j.err
+  --parsable
+cores: 960
+default-resources:
+- time= 120
+- mem_mb= 4600
+- slurm_account= "def-####_cpu" # Enter supervisor or administrator name account
+- user= "socamero"
+executor: slurm
+jobs: 750
+keep-going: true
+latency-wait: 360
+local-cores: 1
+max-jobs-per-second: 10
+max-status-checks-per-second: 50
+printshellcmds: true
+rerun-incomplete: true
+rerun-trigger: mtime
+restart-times: 0
+use-envmodules: true
+
+# Note: time is in minutes
+set-resources:
+  rule_name_1:
+    mem_mb: 34400
+    threads: 8
+    time: 1680
+# Note: this might be redundant, but I put it just in case
+set-threads:
+  rule_name_1: 8
