@@ -1,4 +1,4 @@
-# snakemake-tutorial
+# snakemake-tutorial for DRAC Users (or Canadian Researchers)
 Hi there! This tutorial is tailored towards Canadian researchers who have access to the [Digital Research Alliance of Canada](alliancecan.ca/en) advanced computing clusters. All credit is owed to [Eric Anderson](https://github.com/eriqande/mega-lcwgs-pw-fst-snakeflow) (Research Geneticist, NOAA) whom I met at [ConGen2023](https://www.umt.edu/ces/conferences/congen/). For more information about Snakemake's amazing abilities, see Eric Anderson's lecture slides [here](https://eriqande.github.io/con-gen-2023/slides/snake-slides.html#/section). 
 
 **What is Snakemake?**
