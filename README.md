@@ -24,12 +24,8 @@ source ENV/bin/activate
 ```
 pip install --no-index --upgrade pip
 pip install --no-index snakemake
-pip install --no-index multiqc
-pip install --no-index matplotlib
 pip install snakemake-executor-plugin-cluster-generic
 pip install snakemake-executor-plugin-slurm
-
-# Also installing multiqc and matplotlib for further down analyses
 
 # Double check version of Snakemake  - this is compatible with v8.16.0
 snakemake --version
