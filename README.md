@@ -10,7 +10,7 @@ Setting up Snakemake on DRAC clusters is simpler than you think:
 
 ```
 # We create a virtual environment in the login node.
-module load python/3.11.5
+module load python/3.12.4
 virtualenv --no-download ENV
 
 # Just labelled the virtual environment folder as 'ENV'
