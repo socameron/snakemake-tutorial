@@ -73,8 +73,10 @@ virtualenv --no-download $SLURM_TMPDIR/env
 source $SLURM_TMPDIR/env/bin/activate
 pip install --no-index --upgrade pip
 pip install --no-index snakemake
+pip install snakemake-executor-plugin-cluster-generic
+pip install snakemake-executor-plugin-slurm
 
-snakemake --profile snakeprofile all
+snakemake --profile snakeprofile --executor cluster-generic all
 ```
 
 Then you get a constant update of the snakemake in your terminal, for last 50 lines:
